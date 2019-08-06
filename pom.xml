@@ -129,15 +129,15 @@
 				</plugins>
 			</build>
 			<distributionManagement>
-				<snapshotRepository>
-					<id>oss</id>
-					<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-				</snapshotRepository>
-				<repository>
-					<id>oss</id>
-					<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-				</repository>
-			</distributionManagement>
+  <repository>
+   <id>maven-releases</id>
+   <url> http://nexus.inside.wavewisdom-bj.com:8081/repository/maven-releases/ </url>
+  </repository>
+  <snapshotRepository>
+   <id>maven-snapshots</id>
+   <url> http://nexus.inside.wavewisdom-bj.com:8081/repository/maven-snapshots/ </url>
+  </snapshotRepository>
+ </distributionManagement>
 		</profile>
 	</profiles>
 

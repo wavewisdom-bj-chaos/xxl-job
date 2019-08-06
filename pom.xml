@@ -128,14 +128,14 @@
                     </plugin>
 				</plugins>
 			</build>
-			<distributionManagement>
+<distributionManagement>
   <repository>
-   <id>maven-releases</id>
-   <url> http://nexus.inside.wavewisdom-bj.com:8081/repository/maven-releases/ </url>
+   <id></id>
+   <url></url>
   </repository>
   <snapshotRepository>
-   <id>maven-snapshots</id>
-   <url> http://nexus.inside.wavewisdom-bj.com:8081/repository/maven-snapshots/ </url>
+   <id></id>
+   <url></url>
   </snapshotRepository>
  </distributionManagement>
 		</profile>

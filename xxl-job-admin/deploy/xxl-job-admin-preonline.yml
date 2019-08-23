@@ -1,0 +1,70 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: wave-odin-xxl-job-admin-ingress-preonline
+  namespace: default
+spec:
+  rules:                                                     
+  - host: test-wave-odin-xxl-job-admin.wavewisdom-bj.com
+    http:
+      paths:
+      - backend:
+          serviceName: wave-odin-xxl-job-admin-service-preonline
+          servicePort: 8123
+        path: /
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: wave-odin-xxl-job-admin-service-preonline
+  namespace: default
+  labels:
+    service: wave-odin-xxl-job-admin-service-preonline
+spec:
+  selector:
+    pod: wave-odin-xxl-job-admin-pod-preonline
+  ports:
+  - protocol: TCP
+    name: http
+    port: 8123
+    targetPort: 8123
+  type: ClusterIP
+--- 
+apiVersion: apps/v1 # for versions before 1.8.0 use apps/v1beta1
+kind: Deployment
+metadata:
+  name: xxl-job-admin-deployment-preonline
+  namespace: default
+  labels:
+    deployment: xxl-job-admin-deployment-preonline
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      pod: xxl-job-admin-pod-preonline
+  template:
+    metadata:
+      labels:
+        pod: xxl-job-admin-pod-preonline
+    spec:
+      nodeSelector:
+        nodeGroup: preonline
+      containers:
+      - name: xxl-job-admin
+        image: registry.cn-beijing.aliyuncs.com/wavewisdom-bj-registry-develop/xxl-job-admin:1.0.0
+        imagePullPolicy: Always
+        env:
+        - name: APP_NAME
+          value: xxl-job-admin       
+        ports:
+        - containerPort: 8123  # http        
+        volumeMounts:        
+        - name: timezone
+          mountPath: /etc/localtime
+          
+      imagePullSecrets:
+      - name: registry-secret
+      volumes:              
+      - name: timezone
+        hostPath:
+          path: /etc/localtime

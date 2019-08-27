@@ -51,7 +51,7 @@ spec:
         nodeGroup: preonline
       containers:
       - name: xxl-job-admin
-        image: registry.cn-beijing.aliyuncs.com/wavewisdom-bj-registry-develop/xxl-job-admin:1.0.0
+        image: registry.cn-beijing.aliyuncs.com/wavewisdom-bj-registry-develop/xxl-job-admin:2.0.0
         imagePullPolicy: Always
         env:
         - name: APP_NAME

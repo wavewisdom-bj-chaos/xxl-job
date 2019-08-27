@@ -22,18 +22,33 @@
 	</dependencyManagement>
 
 	<dependencies>
-		<!-- acm 密钥配置管理 -->
-			<dependency>
-			<groupId>com.wave.centimani</groupId>
-			<artifactId>wave-centimani-tool</artifactId>
-			<version>1.0.7-SNAPSHOT</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.slf4j</groupId>
-					<artifactId>slf4j-api</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
+	<!-- nacos -->
+	
+	<!-- <dependency>
+    <groupId>com.alibaba.boot</groupId>
+    <artifactId>nacos-config-spring-boot-starter</artifactId>
+    <version>0.2.1</version>
+     </dependency>
+
+     <dependency>
+    <groupId>com.alibaba.boot</groupId>
+    <artifactId>nacos-config-spring-boot-starter</artifactId>
+    <version>0.1.1</version>
+</dependency>  
+ -->
+	
+<!-- 	    <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-boot-starter-acm</artifactId>
+            <version>1.0.2</version>
+        </dependency> -->
+ 
+
 
 
 		<!-- starter-web：spring-webmvc + autoconfigure + logback + yaml + tomcat -->

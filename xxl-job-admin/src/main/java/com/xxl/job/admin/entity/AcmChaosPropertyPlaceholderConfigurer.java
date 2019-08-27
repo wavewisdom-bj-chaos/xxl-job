@@ -4,7 +4,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
-import com.wave.centimani.tool.component.deploy.ChaosPropertyPlaceholderConfigurer;
 
 
 /**
@@ -14,13 +13,13 @@ import com.wave.centimani.tool.component.deploy.ChaosPropertyPlaceholderConfigur
 @Configuration
 public class AcmChaosPropertyPlaceholderConfigurer {
 
-   /* @Bean
+    @Bean
     @Scope("singleton")
-    public ChaosPropertyPlaceholderConfigurer init() {
-        ChaosPropertyPlaceholderConfigurer chaosPropertyPlaceholderConfigurer=new ChaosPropertyPlaceholderConfigurer();
+    public ChaosPropertyPlaceholderConfigurers init() {
+        ChaosPropertyPlaceholderConfigurers chaosPropertyPlaceholderConfigurer=new ChaosPropertyPlaceholderConfigurers();
         chaosPropertyPlaceholderConfigurer.setOrder(1);
         chaosPropertyPlaceholderConfigurer.setIgnoreUnresolvablePlaceholders(true);
         return  chaosPropertyPlaceholderConfigurer;
-    }*/
+    }
     
 }

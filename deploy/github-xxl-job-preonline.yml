@@ -55,8 +55,8 @@ spec:
         imagePullPolicy: Always
         env:
         - name: APP_NAME
-          value: xxl-job-admin       
-        - name: spring.profiles.active
+          value: xxl-job-admin-t       
+        - name: --spring.profiles.active
           value: preonline
         ports:
         - containerPort: 8123  # http        

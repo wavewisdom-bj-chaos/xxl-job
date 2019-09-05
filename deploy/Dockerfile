@@ -8,4 +8,4 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 ADD ./*.jar /app.jar
 
-ENTRYPOINT ["sh","-c","java -jar /app.jar $PARAMS"]
+ENTRYPOINT ["sh","-c","java -jar /app.jar  $PARAMS"]

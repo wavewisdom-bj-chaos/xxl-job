@@ -8,8 +8,6 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -42,7 +40,7 @@ import com.xxl.job.core.glue.GlueTypeEnum;
 @Controller
 @RequestMapping("/jobinfo")
 public class JobInfoController {
-    private static Logger logger = LoggerFactory.getLogger(JobInfoController.class);
+   // private static Logger logger = LoggerFactory.getLogger(JobInfoController.class);
 	@Resource
 	private XxlJobGroupDao xxlJobGroupDao;
 	@Resource
@@ -157,7 +155,7 @@ public class JobInfoController {
     @ResponseBody
     @PermissionLimit(limit = false)
     public ReturnT<String> adds(@RequestBody XxlJobInfo jobInfo) {
-    	logger.info("[excute method:添加任务]["+jobInfo.toString()+"]");
+    	//logger.info("[excute method:添加任务]["+jobInfo.toString()+"]");
         LogsUtil.setLogInfo("", LogEnum.IN, "xxl-job", "adds", null, "", jobInfo, "xxl-job-post-adds添加");
         return xxlJobService.add(jobInfo);
     }
@@ -170,7 +168,7 @@ public class JobInfoController {
     @ResponseBody
     @PermissionLimit(limit = false)
     public ReturnT<String> updates(@RequestBody XxlJobInfo jobInfo) {
-    	 logger.info("[excute method:更新任务]["+jobInfo.toString()+"]");
+    	// logger.info("[excute method:更新任务]["+jobInfo.toString()+"]");
         LogsUtil.setLogInfo("", LogEnum.IN, "xxl-job", "updates", null, "", jobInfo, "xxl-job-post-updates更新");
         return xxlJobService.update(jobInfo);
     }
@@ -183,7 +181,7 @@ public class JobInfoController {
     @ResponseBody
     @PermissionLimit(limit = false)
     public ReturnT<String> removes(@RequestBody XxlJobInfo jobInfo) {
-    	 logger.info("[excute method:删除任务]["+jobInfo.toString()+"]");
+    	 //logger.info("[excute method:删除任务]["+jobInfo.toString()+"]");
          LogsUtil.setLogInfo("", LogEnum.IN, "xxl-job", "removes", null, "", jobInfo, "xxl-job-post-removes移除");
         return xxlJobService.remove(jobInfo.getId());
     }
@@ -196,7 +194,7 @@ public class JobInfoController {
     @ResponseBody
     @PermissionLimit(limit = false)
     public ReturnT<String> pauses( @RequestBody XxlJobInfo jobInfo) {
-    	 logger.info("[excute method:停止任务]["+jobInfo.toString()+"]");
+    	 //logger.info("[excute method:停止任务]["+jobInfo.toString()+"]");
          LogsUtil.setLogInfo("", LogEnum.IN, "xxl-job", "stops", null, "", jobInfo, "xxl-job-post-stops停止");
         return xxlJobService.stop(jobInfo.getId());
     }
@@ -209,7 +207,7 @@ public class JobInfoController {
     @ResponseBody
     @PermissionLimit(limit = false)
     public ReturnT<String> starts(@RequestBody XxlJobInfo jobInfo) {
-    	logger.info("[excute method:启动任务]["+jobInfo.toString()+"]");
+    	//logger.info("[excute method:启动任务]["+jobInfo.toString()+"]");
         LogsUtil.setLogInfo("", LogEnum.IN, "xxl-job", "starts", null, "", jobInfo, "xxl-job-post-starts启动");
         return xxlJobService.start(jobInfo.getId());
     }
@@ -223,7 +221,7 @@ public class JobInfoController {
     @ResponseBody
     @PermissionLimit(limit = false)
     public ReturnT<String> triggerJobs(@RequestBody XxlJobInfo jobInfo) {
-    	logger.info("[excute method:立刻执行任务]["+jobInfo.toString()+"]");
+    	//logger.info("[excute method:立刻执行任务]["+jobInfo.toString()+"]");
         LogsUtil.setLogInfo("", LogEnum.IN, "xxl-job", "triggers", null, "", jobInfo, "xxl-job-post-triggers立即触发");
 
         if (jobInfo.getExecutorParam() == null) {

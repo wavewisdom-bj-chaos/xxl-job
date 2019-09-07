@@ -48,6 +48,17 @@
             <version>1.0.2</version>
         </dependency> -->
  
+		<dependency>
+			<groupId>com.wave.centimani</groupId>
+			<artifactId>wave-centimani-tool</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+			</exclusions>
+			<version>1.0.7-SNAPSHOT</version>
+		</dependency>
 
 
 

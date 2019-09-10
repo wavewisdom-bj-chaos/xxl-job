@@ -135,6 +135,18 @@ public class JobInfoController {
         return xxlJobService.start(id);
     }
     
+    /**
+     * wave-内部使用：根据任务ID更新任务信息
+     * @param jobInfo
+     * @return
+     */
+    @RequestMapping("/test")
+    @ResponseBody
+    @PermissionLimit(limit = false)
+    public String test(@RequestBody XxlJobInfo jobInfo) {
+        return "success";
+    }
+    
     @RequestMapping("/trigger")
     @ResponseBody
     //@PermissionLimit(limit = false)

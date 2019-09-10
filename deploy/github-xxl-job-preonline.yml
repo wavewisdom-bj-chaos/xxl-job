@@ -22,7 +22,7 @@ metadata:
     service: wave-odin-xxl-job-admin-service-preonline
 spec:
   selector:
-    pod: wave-odin-xxl-job-admin-pod-preonline
+    pod: xxl-job-admin-pod-preonline
   ports:
   - protocol: TCP
     name: http

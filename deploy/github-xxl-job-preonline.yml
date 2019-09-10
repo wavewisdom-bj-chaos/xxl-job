@@ -26,8 +26,10 @@ spec:
   ports:
   - protocol: TCP
     name: http
+    containerPort: 8123
     port: 8123
     targetPort: 8123
+    hostPort: 8123
   type: ClusterIP
 --- 
 apiVersion: apps/v1 # for versions before 1.8.0 use apps/v1beta1

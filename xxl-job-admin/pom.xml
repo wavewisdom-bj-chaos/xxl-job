@@ -57,7 +57,7 @@
 					<artifactId>slf4j-api</artifactId>
 				</exclusion>
 			</exclusions>
-			<version>1.0.7</version>
+			<!-- <version>1.0.7</version> -->
 		</dependency>
 
 

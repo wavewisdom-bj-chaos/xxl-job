@@ -108,6 +108,8 @@ public class JobInfoController {
 	@RequestMapping("/add")
 	@ResponseBody
 	public ReturnT<String> add(XxlJobInfo jobInfo) {
+		
+		 LogsUtil.setLogInfo("", LogEnum.IN, "xxl-job", "adds", null, "", jobInfo, "xxl-job-post-adds添加");
 		return xxlJobService.add(jobInfo);
 	}
 	

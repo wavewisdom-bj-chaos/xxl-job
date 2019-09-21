@@ -1,18 +1,3 @@
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: wave-odin-xxl-job-admin-ingress-preonline
-  namespace: default
-spec:
-  rules:                                                     
-  - host: test-wave-odin-xxl-job-admin.wavewisdom-bj.com
-    http:
-      paths:
-      - backend:
-          serviceName: wave-odin-xxl-job-admin-service-preonline
-          servicePort: 8123
-        path: /
----
 apiVersion: v1
 kind: Service
 metadata:
@@ -31,6 +16,23 @@ spec:
     targetPort: 8123
   type: ClusterIP
 --- 
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: wave-odin-xxl-job-admin-ingress-preonline
+  namespace: default
+spec:
+  rules:                                                     
+  - host: test-wave-odin-xxl-job-admin.wavewisdom-bj.com
+    http:
+      paths:
+      - backend:
+          serviceName: wave-odin-xxl-job-admin-service-preonline
+          servicePort: 8123
+        path: /
+---
+
 apiVersion: apps/v1 # for versions before 1.8.0 use apps/v1beta1
 kind: Deployment
 metadata:

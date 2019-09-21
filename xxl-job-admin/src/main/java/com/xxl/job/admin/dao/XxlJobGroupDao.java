@@ -1,14 +1,16 @@
 package com.xxl.job.admin.dao;
 
-import com.xxl.job.admin.core.model.XxlJobGroup;
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
-import java.util.List;
+import com.xxl.job.admin.core.model.XxlJobGroup;
 
 /**
  * Created by xuxueli on 16/9/30.
  */
+
 @Mapper
 public interface XxlJobGroupDao {
 

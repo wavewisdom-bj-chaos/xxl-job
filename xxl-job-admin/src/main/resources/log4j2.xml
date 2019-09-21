@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="ERROR" monitorInterval="600">
+	<Properties>
+		<Property name="log_path">/home/wave4080/xjoblogs</Property>
+		<Property name="log_pattern">[%-d{yyyy-MM-dd HH:mm:ss.SSS}][${sys:tomcat_address}][%t][%p][%m]%n
+		</Property>
+	</Properties>
+	<appenders>
+		<RollingFile name="RUNTIMELOG"
+			fileName="${log_path}/web_app_runtime_log.current.txt" filePattern="${log_path}/web_app_runtime_log.%d{yyyy-MM-dd}.txt">
+			<PatternLayout>
+				<pattern>${log_pattern}</pattern>
+			</PatternLayout>
+			<Policies>
+				<!--设置文档每天回滚 -->
+				<TimeBasedTriggeringPolicy interval="1"                                                                             modulate="true" />   
+			</Policies>
+		</RollingFile>
+	</appenders>
+	<Loggers>
+		<root level="INFO">
+			<appender-ref ref="RUNTIMELOG"></appender-ref>
+		</root>
+	</Loggers>
+</configuration>

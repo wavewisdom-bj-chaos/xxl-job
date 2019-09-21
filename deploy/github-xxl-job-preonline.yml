@@ -62,7 +62,6 @@ spec:
         - name: --spring.profiles.active
           value: preonline
         ports:
-        - containerPort: 8123  # http        
         volumeMounts:        
         - name: timezone
           mountPath: /etc/localtime

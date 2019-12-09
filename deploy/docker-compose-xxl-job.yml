@@ -1,0 +1,13 @@
+version: "3"
+services:
+  xxl-job:
+    image: registry.cn-beijing.aliyuncs.com/wavewisdom-bj-registry-develop/github-xxl-job:2.0.0
+    container_name: xxl-job
+    ports:
+      - "8123:8123"
+    volumes:
+      - "/etc/hosts:/etc/hosts"
+      - "/etc/localtime:/etc/localtime:ro"
+      - "/tmp:/data/applogs"
+    environment:
+      PARAMS: "--spring.datasource.url=jdbc:mysql://mysql01.inside.wavewisdom-bj.com:3306/xxl_job?Unicode=true&characterEncoding=UTF-8  --spring.datasource.username=root  --spring.datasource.password=waveDevelop123  --spring.datasource.driver-class-name=com.mysql.jdbc.Driver"

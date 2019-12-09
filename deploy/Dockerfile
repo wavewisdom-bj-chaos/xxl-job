@@ -1,6 +1,6 @@
 FROM openjdk:7-jre-slim
 MAINTAINER xuxueli
-label version=2.0.1
+label version=2.0.0
 ENV PARAMS=""
 
 ENV TZ=PRC

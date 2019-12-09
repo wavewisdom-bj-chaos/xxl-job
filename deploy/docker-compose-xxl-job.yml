@@ -1,7 +1,7 @@
 version: "3"
 services:
   xxl-job:
-    image: registry.cn-beijing.aliyuncs.com/wavewisdom-bj-registry-develop/github-xxl-job:2.0.1
+    image: registry.cn-beijing.aliyuncs.com/wavewisdom-bj-registry-develop/github-xxl-job:2.0.0
     container_name: xxl-job
     ports:
       - "8123:8123"

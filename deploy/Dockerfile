@@ -1,4 +1,4 @@
-FROM openjdk:7-jre-slim
+FROM openjdk:8-jre-slim
 MAINTAINER xuxueli
 label version=2.0.0
 ENV PARAMS=""

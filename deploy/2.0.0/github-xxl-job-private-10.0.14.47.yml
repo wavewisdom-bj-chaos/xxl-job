@@ -1,0 +1,15 @@
+version: "3"
+services:
+  odin-workflow:
+    image: registry.cn-beijing.aliyuncs.com/wavewisdom-bj-registry-develop/wave-odin-workflow:4.0.0
+    container_name: odin-workflow
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/hosts:/etc/hosts
+      - /var/waveOdin/workflow/:/usr/local/tomcat/logs/
+    ports:
+      - "8091:8091"
+    environment:
+      JAVA_OPTS: "-Dendpoint=nacos01.inside.wavewisdom-bj.com:8848 -Dnamespace=176ae4dc-1249-42af-a1d7-af2231ab605a -DaccessKey=1043fc0210ca47299ab7cf6a106f7d8c -DsecretKey=7LETsvBUYymJhY1mek4yEF1BHEs=  -Dgroup=chaos.odin.wave-odin-workflow  -Dfile.encoding=UTF8 -Duser.timezone=GMT+08 -DenvType=nacos" 
+    #network_mode: host
+    restart: always

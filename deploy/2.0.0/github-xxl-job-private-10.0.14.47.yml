@@ -8,4 +8,6 @@ services:
     volumes:
     - /etc/hosts:/etc/hosts
     - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "8123:8123"
     restart: always

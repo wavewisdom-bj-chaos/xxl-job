@@ -8,4 +8,4 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 ADD ./*.jar /github-xxl-job.jar
 
-ENTRYPOINT ["sh","-c","java -jar /github-xxl-job.jar  ${PARAMS:--spring.profiles.active=dev}"]
+ENTRYPOINT ["sh","-c","java -jar /github-xxl-job.jar  ${PARAMS}"]

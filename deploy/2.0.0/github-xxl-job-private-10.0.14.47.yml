@@ -1,6 +1,11 @@
 version: "3"
 services:
  xxl-job-admin:
+   deploy:
+     resources:
+       limits:
+         cpus: '0.5'
+         memory: 2048M
     image: registry.cn-beijing.aliyuncs.com/wavewisdom-bj-registry-develop/github-xxl-job:2.0.0
     container_name: xxl-job-admin
     environment:

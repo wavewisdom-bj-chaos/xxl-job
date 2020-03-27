@@ -1,7 +1,7 @@
 version: "3"
 services:
-  xxl-job-admin:
-    deploy:
+ xxl-job-admin:
+   deploy:
      resources:
        limits:
          cpus: '0.5'

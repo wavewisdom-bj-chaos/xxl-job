@@ -1,18 +1,18 @@
 version: "3"
 services:
- xxl-job-admin:
-   deploy:
-     resources:
-       limits:
-         cpus: '0.5'
-         memory: 2048M
+  xxl-job-admin:
     image: github-xxl-job:2.0.0
     container_name: xxl-job-admin
     environment:
       - PARAMS=--spring.profiles.active=dev
     volumes:
-    - /etc/hosts:/etc/hosts
-    - /etc/localtime:/etc/localtime:ro
+      - /etc/hosts:/etc/hosts
+      - /etc/localtime:/etc/localtime:ro
     ports:
       - "8123:8123"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 2048M
     restart: always

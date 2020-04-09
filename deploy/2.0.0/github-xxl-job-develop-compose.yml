@@ -1,7 +1,7 @@
 version: "3"
 services:
   xxl-job-admin:
-    image: github-xxl-job:2.0.0
+    image: 193.168.1.126:8888/intranet-develop/github-xxl-job:2.0.0
     container_name: xxl-job-admin
     environment:
       - PARAMS=--spring.profiles.active=dev
